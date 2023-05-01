@@ -1,32 +1,48 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #222222;
+  background-color: #DAE0E6;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%
+}
+
+h1{
+  margin: 0;
+  font-size: 25px;
 }
 
 header {
+  position: fixed;
+  display: block;
+  width: 100%;
+  top: 0;
+  left: 0;
+  justify-content: left;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+}
+
+.heading{
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 10px;
+  padding-left: 20px;
+  margin: 5px 0;
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgb(48, 47, 47);
-  border-radius: 10px;
-  margin: 0 80px;
+  padding-top: 45px;
 }
 
 .card{
@@ -34,27 +50,78 @@ main {
   justify-content: space-between;
   align-items: center;
   width: 400px;
-  margin: 20px;
-  background-color: #242424;
-  border-radius: 10px;
+  margin: 5px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
 }
 
 .photo{
-  margin: 20px;
+  margin: 10px;
 }
 
 ul{
   list-style: none;
-  /* margin: 0; */
   padding: 0;
 }
 
 li{
-  width: 190px;
-  margin: 0;
+  width: 250px;
 }
 
-button{
-  height: 1.5rem;
-  margin: 20px;
+.component{
+  margin-right: 5px;
+}
+
+.hidden-card{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #24242492;
+}
+
+.hidden-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  border: 1px solid #CCCCCC;
+}
+
+.buttonF{
+  background-color: rgba(28,28,28,0.1);
+  color: #878A8C;
+  border-radius: 999px;
+  border: none;
+  padding: 5px 12px 10px 12px;
+  font-size: 1rem;
+  margin: 10px;
+  /* font-weight: 900; */
+  font-family: inherit;
+  cursor: pointer;
+}
+.buttonF:hover{
+  background-color: rgba(28,28,28,0.2);
+  color: #222222;
+}
+
+.buttonF:active{
+  background-color: rgba(28,28,28,0.3);
+  color: #494a4b;
+}
+
+.button-danger{
+  position: fixed;
+  padding: 10px 12px 5px 12px;
+  z-index: 1;
+  left: 48vw;
+  top: 59vh;
 }

@@ -1,36 +1,33 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import UserCard from './components/UserCard'
 import reactLogo from './assets/react.svg'
+import useFetch from './hooks/useFetch'
 import './App.css'
 
 function App() {
 
-  const [data, setData] = useState([])
-
-  const url = 'https://randomuser.me/api?results=25'
-
-  useEffect(() => {
-    const fetchData = () => {
-      axios.get(url)
-      .then((response) => {
-        setData(response.data.results)
-      })
-      .catch(error => console.log(`Error: ${error}`))
-    }
-  fetchData();
-}, []);
+  const {
+    data,
+    loading,
+  } = useFetch();
 
   return (
-    <>
+    <div className='app'>
       <header>
+        <div className='heading'>
         <img src={reactLogo} alt="React-Logo" />
         <h1>Address Book</h1>
+        </div>
       </header>
-      <main>
-        <UserCard data={data} />
-      </main>
-    </>
+      <div>
+        {loading && <div>Loading</div>}
+        {!loading && (
+          <main>
+            <UserCard data={data} />
+          </main>
+        )}
+      </div>
+    </div>
   )
 }
 
